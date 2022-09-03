@@ -1,0 +1,257 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+
+:root {
+    --color-primary: #A681FA;
+    --black-transparent: rgba(0, 0, 0, 0.4);
+    --transition-3: .3s;
+
+    /*        Tema escuro             */
+    --bg-theme-black: rgb(24, 21, 21);
+    --text-theme-black: rgb(255, 255, 255);
+
+
+    /*        Tema claro               */
+    --bg-theme-white: rgb(255, 255, 255);
+    --text-theme-white: rgb(24, 21, 21);
+
+    --border-radius-4: 4px;
+}
+
+@font-face {
+    font-family: ArialBlack;
+    src: url("../fonts/arial-black.ttf");
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    
+}
+
+
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    overflow-x: hidden;
+    
+}
+
+body.dark {
+    background-color: var(--bg-theme-black);
+    color: var(--text-theme-black);
+    transition: var(--transition-3) background-color;
+}
+
+body.light {
+    background-color: var(--bg-theme-white);
+    color: var(--text-theme-white);
+    transition: var(--transition-3) background-color;
+    
+}
+
+body.dark a {
+    color: var(--text-theme-black);
+    
+}
+
+body.light a {
+    color: var(--text-theme-white);
+    
+}
+
+.toggle-container {
+    display: flex;
+    gap: 20px;
+    width: 180px;
+    padding: 20px 15px;
+    border-radius: var(--border-radius-4);
+    background-color: var(--color-primary);
+    position: absolute;
+    right: 120px;
+    cursor: pointer;
+    transition: var(--transition-3) transform;
+}
+
+
+#toggle-text {
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: var(--transition-3) color;
+}
+
+ 
+#toggle-icon {
+    transform: scale(2.3);
+}
+
+
+body.dark #toggle-icon {
+    color: var(--bg-theme-white);
+}
+
+body.light #toggle-icon {
+    color: var(--bg-theme-black);
+}
+body.dark #toggle-text {
+    color: var(--bg-theme-white);
+}
+
+body.light #toggle-text {
+    color: var(--bg-theme-black);
+    
+}
+
+
+
+
+a {
+    font-weight: bold;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 60px;
+    height: 200px;
+    position: relative;
+    
+    
+}
+#header-title {
+    text-transform: uppercase;
+    font-family: ArialBlack;
+
+}
+
+body.dark #header-title {
+    color: var(--text-theme-black);
+}
+
+
+
+body.white #header-title {
+    color: var(--text-theme-white);
+}
+
+nav {
+    background-color: var(--color-primary);
+    transition: var(--transition-3) all;
+    height: 0;
+    overflow: hidden;
+   
+    
+}
+
+nav.is-visible {
+    height: 60px;
+}
+
+.image-logo {
+    width: 200px; 
+}
+
+.image-logo-small {
+    width: 197px;
+    margin-left: 600px;
+    cursor: pointer;
+}
+
+
+.menu-hamburguer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 33px;
+    cursor: pointer;
+}
+
+.menu-hamburguer-bar {
+    width: 100%;
+    background-color: var(--color-primary);
+    height: 5px;
+    border-radius: var(--border-radius-4);
+}
+
+
+
+.menu {
+    display: flex;
+    gap: 100px;
+    height: 100%;
+    background-color: var(--color-second);
+    justify-content: center;
+    
+}
+
+.menu li a{
+    display: inline-block;
+    font-weight: bold;
+    height: 100%;
+    position: relative;
+    font-size: 20px;
+    padding: 13px;
+}
+
+body.dark .menu li {
+    color: var(--text-theme-black);
+}
+
+
+
+.submenu {
+    position: absolute;
+    background-color: var(--color-primary);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    height: max-content;
+    width: 150px;
+    padding-bottom: 10px;
+    
+}
+
+
+.submenu li a {
+    width: 100%;
+    font-size: 16px;
+    
+}
+
+.menu li:hover .submenu {
+    display: flex;
+}
+
+
+.menu li a:hover {
+    background-color: black;
+    color: white;
+}
+
+.submenu li a:hover {
+    background-color: var(--color-second);
+    color: black;
+    background-color: black;
+    color: white;
+}
+
+
+main {
+    height: 100vh;
+    
+}
+
+footer {
+    width: 100%;
+    height: 100px;
+}
