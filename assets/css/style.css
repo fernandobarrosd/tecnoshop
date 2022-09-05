@@ -33,10 +33,9 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    font-weight: bold;
     
 }
-
-
 
 body {
     width: 100vw;
@@ -44,9 +43,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
     overflow-x: hidden;
-    position: absolute;
+    
     
 }
+
+/*====== Aqui fica a manipulação dos temas =======*/
 
 body.dark {
     background-color: var(--bg-theme-black);
@@ -71,46 +72,27 @@ body.light a {
     
 }
 
-.toggle-container {
-    display: flex;
-    gap: 20px;
-    padding: 20px 15px;
-    border-radius: var(--circle);
-    background-color: var(--color-second);
-    position: absolute;
-    right: 120px;
-    cursor: pointer;
-    transition: var(--transition-3) transform;
-}
-
-
-#toggle-text {
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: var(--transition-3) color;
-}
-
- 
-#toggle-icon {
-    transform: scale(2.3);
-}
-
-
-body.dark #toggle-icon {
+body.dark i#toggle-icon {
     color: var(--bg-theme-white);
 }
 
-body.light #toggle-icon {
+body.light i#toggle-icon {
     color: var(--bg-theme-black);
 }
 
-
-
-
-
-a {
-    font-weight: bold;
+body.dark #header-title {
+    color: var(--text-theme-black);
 }
+
+
+body.light #header-title {
+    color: var(--text-theme-white);
+}
+
+body.light span#segundo {
+    color: var(--text-theme-white);
+}
+
 
 header {
     display: flex;
@@ -119,10 +101,9 @@ header {
     padding: 15px 60px;
     height: 200px;
     position: relative;
-    
-    
 }
-#header-title {
+
+h1#header-title {
     text-transform: uppercase;
     font-family: ArialBlack;
     display: flex;
@@ -132,59 +113,62 @@ header {
     height: 150px;
 }
 
-
-
-.purple {
+span.purple {
     color: var(--color-second);
     position: absolute;
-    
 }
 
-#primeiro {
+span.line-light {
+    color: var(--text-theme-black);
+    position: relative;
+}
+
+span#primeiro {
     top: 0;
     left: 0;
 }
 
-#segundo {
+span#segundo {
     top: 50px;
     left: 40px;
     
 }
 
-#quarto {
-    transform: translateY(5.4px) translateX(95px);
-    animation-name: animacao;
-    animation-fill-mode: forwards;
-    animation-duration: 1s;
-    animation-timing-function: ease;
-    animation-delay: 0.3s;
-}
 
 
-body.light #segundo {
-    color: var(--text-theme-white);
-}
 
-#terceiro {
+span#terceiro {
     right: 0;
     bottom: 0;
 }
 
-.line-light {
-    color: var(--text-theme-black);
-    position: relative;
+span#quarto {
+    transform: translateY(5.4px) translateX(95px);
+    animation-name: animacao1;
+    animation-fill-mode: forwards;
+    animation-duration: 1.3s;
+    animation-timing-function: ease;
 }
 
-
-body.dark #header-title {
-    color: var(--text-theme-black);
+div.toggle-container {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    gap: 20px;
+    padding: 20px 15px;
+    border-radius: var(--circle);
+    background-color: var(--color-second);
+    position: absolute;
+    right: 120px;
+    cursor: pointer;
+    transition: var(--transition-3) transform;
+    align-items: center;
+    justify-content: center;
 }
 
-
-
-
-body.white #header-title {
-    color: var(--text-theme-white);
+ 
+i#toggle-icon {
+    transform: scale(2.3);
 }
 
 
@@ -194,21 +178,10 @@ nav {
     height: 0;
     width: 100%;
     position: absolute;
-    
 }
 
 nav.is-visible {
     height: 60px;
-}
-
-.image-logo {
-    width: 200px; 
-}
-
-.image-logo-small {
-    width: 197px;
-    margin-left: 600px;
-    cursor: pointer;
 }
 
 
@@ -227,8 +200,6 @@ nav.is-visible {
     border-radius: var(--border-radius-4);
 }
 
-
-
 .menu {
     display: flex;
     gap: 100px;
@@ -236,21 +207,15 @@ nav.is-visible {
     background-color: var(--color-second);
     justify-content: center;
     overflow: hidden;
+    
 }
 
 .menu li a{
     display: inline-block;
-    font-weight: bold;
     height: 100%;
     font-size: 20px;
     padding: 13px;
 }
-
-body.dark .menu li {
-    color: var(--text-theme-black);
-}
-
-
 
 .submenu {
     position: absolute;
@@ -268,7 +233,7 @@ body.dark .menu li {
 
 .submenu li a {
     width: 100%;
-    font-size: 16px;
+    
     
 }
 
@@ -292,7 +257,6 @@ body.dark .menu li {
 .promocao-container {
     width: 100%;
     display: flex;
-    background-color: var(--color-second);
     height: 200px;
     margin-top: 200px;
 }
@@ -308,11 +272,13 @@ main {
 footer {
     width: 100%;
     height: 100px;
+    background-color: var(--color-second);
 }
 
 
 
-@keyframes animacao {
+/*  ====== Animações ======  */
+@keyframes animacao1 {
     to {
         transform: translateY(60px) translateX(66px);
         color: var(--color-second);

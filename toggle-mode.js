@@ -1,6 +1,5 @@
 import Toggle from "./utilities.js";
 
-
 const toggleMode = {
     toggleContainer: document
     .querySelector(".toggle-container"),
