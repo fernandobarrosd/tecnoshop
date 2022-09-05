@@ -3,6 +3,7 @@
 
 :root {
     --color-primary: #A681FA;
+    --color-second: #9400FF;
     --black-transparent: rgba(0, 0, 0, 0.4);
     --transition-3: .3s;
 
@@ -12,10 +13,11 @@
 
 
     /*        Tema claro               */
-    --bg-theme-white: rgb(255, 255, 255);
+    --bg-theme-white: rgba(255, 255, 255, 0.986);
     --text-theme-white: rgb(24, 21, 21);
 
     --border-radius-4: 4px;
+    --circle: 50px;
 }
 
 @font-face {
@@ -71,10 +73,9 @@ body.light a {
 .toggle-container {
     display: flex;
     gap: 20px;
-    width: 180px;
     padding: 20px 15px;
-    border-radius: var(--border-radius-4);
-    background-color: var(--color-primary);
+    border-radius: var(--circle);
+    background-color: var(--color-second);
     position: absolute;
     right: 120px;
     cursor: pointer;
@@ -101,14 +102,7 @@ body.dark #toggle-icon {
 body.light #toggle-icon {
     color: var(--bg-theme-black);
 }
-body.dark #toggle-text {
-    color: var(--bg-theme-white);
-}
 
-body.light #toggle-text {
-    color: var(--bg-theme-black);
-    
-}
 
 
 
@@ -130,8 +124,55 @@ header {
 #header-title {
     text-transform: uppercase;
     font-family: ArialBlack;
-
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    position: relative;
+    height: 150px;
 }
+
+
+
+.purple {
+    color: var(--color-second);
+    position: absolute;
+    
+}
+
+#primeiro {
+    top: 0;
+    left: 0;
+}
+
+#segundo {
+    top: 50px;
+    left: 40px;
+    
+}
+
+#quarto {
+    top: 4px;
+    left: 97px;
+    animation-name: animacao;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+}
+
+
+body.light #segundo {
+    color: var(--text-theme-white);
+}
+
+#terceiro {
+    right: 0;
+    bottom: 0;
+}
+
+.line-light {
+    color: var(--text-theme-black);
+    position: relative;
+}
+
 
 body.dark #header-title {
     color: var(--text-theme-black);
@@ -139,9 +180,11 @@ body.dark #header-title {
 
 
 
+
 body.white #header-title {
     color: var(--text-theme-white);
 }
+
 
 nav {
     background-color: var(--color-primary);
@@ -177,7 +220,7 @@ nav.is-visible {
 
 .menu-hamburguer-bar {
     width: 100%;
-    background-color: var(--color-primary);
+    background-color: var(--color-second);
     height: 5px;
     border-radius: var(--border-radius-4);
 }
@@ -245,6 +288,14 @@ body.dark .menu li {
     color: white;
 }
 
+.promocao-container {
+    width: 100%;
+    display: flex;
+    background-color: var(--color-second);
+    height: 200px;
+    margin-top: 200px;
+}
+
 
 main {
     height: 100vh;
@@ -254,4 +305,14 @@ main {
 footer {
     width: 100%;
     height: 100px;
+}
+
+
+
+@keyframes animacao {
+    to {
+        top: 58px;
+        left: 66px;
+        color: var(--color-second);
+    }
 }
