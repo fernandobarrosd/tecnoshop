@@ -1,17 +1,15 @@
-export default class Toggle {
-    constructor() {
-        this.toggle = false;
-    }
-
-    static setToggle(callbackfn1, callbackfn2) {
+const Toggle = {
+    toggle: false,
+    setToggle(callbackf1, callbackf2) {
         this.toggle = !this.toggle;
-        
+
         if (this.toggle) {
-            callbackfn1();
+            callbackf1();
         }
         else {
-            callbackfn2();
+            callbackf2();
         }
     }
-
 }
+
+export default Toggle;

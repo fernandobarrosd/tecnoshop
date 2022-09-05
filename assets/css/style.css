@@ -44,6 +44,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
     overflow-x: hidden;
+    position: absolute;
     
 }
 
@@ -151,11 +152,12 @@ header {
 }
 
 #quarto {
-    top: 4px;
-    left: 97px;
+    transform: translateY(5.4px) translateX(95px);
     animation-name: animacao;
     animation-fill-mode: forwards;
     animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0.3s;
 }
 
 
@@ -190,8 +192,8 @@ nav {
     background-color: var(--color-primary);
     transition: var(--transition-3) all;
     height: 0;
-    overflow: hidden;
-   
+    width: 100%;
+    position: absolute;
     
 }
 
@@ -233,14 +235,13 @@ nav.is-visible {
     height: 100%;
     background-color: var(--color-second);
     justify-content: center;
-    
+    overflow: hidden;
 }
 
 .menu li a{
     display: inline-block;
     font-weight: bold;
     height: 100%;
-    position: relative;
     font-size: 20px;
     padding: 13px;
 }
@@ -299,6 +300,8 @@ body.dark .menu li {
 
 main {
     height: 100vh;
+    display: flex;
+    justify-content: center;
     
 }
 
@@ -311,8 +314,7 @@ footer {
 
 @keyframes animacao {
     to {
-        top: 58px;
-        left: 66px;
+        transform: translateY(60px) translateX(66px);
         color: var(--color-second);
     }
 }
