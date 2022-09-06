@@ -1,30 +1,49 @@
-import Toggle from "./utilities.js";
+import themesT from "./themes.js";
+import { isLastItem } from "./utilities.js";
 
 const toggleMode = {
     toggleContainer: document
     .querySelector(".toggle-container"),
     toggleIcon: document.querySelector("#toggle-icon"),
     body: document.body,
+    currentTheme: 0,
+    themes: themesT,
+    
 
-    setDarkMode() {
-        toggleMode.body.setAttribute("class", "dark");
-        toggleMode.toggleIcon.setAttribute("class", "bi bi-sun-fill");
-        toggleMode.toggleIcon.style.transition = ".3s all";
+    update() {
+        toggleMode.body.
+        setAttribute("class", 
+        toggleMode.getTheme().name);
+        
+
+        toggleMode.toggleIcon
+        .setAttribute("class", 
+        toggleMode.getTheme().iconName);
     },
 
-    setLightMode() {
-        toggleMode.body.setAttribute("class", "light");
-        toggleMode.toggleIcon.setAttribute("class", "bi bi-moon-fill");
-        toggleMode.toggleIcon.style.transition = ".3s all";
+
+    getTheme() {
+        return themesT[toggleMode.currentTheme];
     },
+
+    next() {
+        if (!isLastItem(toggleMode.currentTheme, themesT)) {
+            toggleMode.currentTheme ++;
+        }
+
+        else {
+            toggleMode.currentTheme = 0;
+        }
+    },
+
+
     init() {
-        toggleMode.toggleIcon.addEventListener("click", () => {
-            Toggle.setToggle(
-                toggleMode.setDarkMode,
-                toggleMode.setLightMode
-            )
+        toggleMode.toggleContainer
+        .addEventListener("click", () => {
+           toggleMode.next();
+           toggleMode.update();
         })
-    }
+    },
 }
 
 export default toggleMode;

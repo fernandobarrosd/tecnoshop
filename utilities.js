@@ -12,4 +12,11 @@ const Toggle = {
     }
 }
 
-export default Toggle;
+const isLastItem = (indice, array = []) => {
+    return indice === array.length - 1;
+}
+
+export {
+    Toggle,
+    isLastItem
+}
