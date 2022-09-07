@@ -1,0 +1,33 @@
+/*  ====== Animações ======  */
+@keyframes positionEffect {
+    to {
+        transform: translateY(60px) translateX(66px);
+        color: var(--color-second);
+        opacity: 1;
+
+    }
+}
+
+@keyframes opacityEffect {
+    to {
+        opacity: 1;
+
+    }
+}
+
+
+
+@keyframes rotateCircleEffect {
+    
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes zoomEffect {
+    to {
+        transform: scale(1.2);
+        
+    }
+}

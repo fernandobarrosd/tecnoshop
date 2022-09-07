@@ -38,12 +38,16 @@ const toggleMode = {
 
 
     init() {
+       toggleMode.handleClick();
+    },
+
+    handleClick() {
         toggleMode.toggleContainer
         .addEventListener("click", () => {
            toggleMode.next();
            toggleMode.update();
         })
-    },
+    }
 }
 
 export default toggleMode;

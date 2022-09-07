@@ -1,0 +1,18 @@
+:root {
+    --color-primary: #A681FA;
+    --color-second: #9400FF;
+    --black-transparent: rgba(0, 0, 0, 0.4);
+    --transition-3: .3s;
+
+    /*        Tema escuro             */
+    --bg-theme-black: rgb(24, 21, 21);
+    --text-theme-black: rgb(255, 255, 255);
+
+
+    /*        Tema claro               */
+    --bg-theme-white: rgba(255, 255, 255, 0.986);
+    --text-theme-white: rgb(24, 21, 21);
+
+    --border-radius-4: 4px;
+    --circle: 50px;
+}

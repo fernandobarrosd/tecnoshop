@@ -1,31 +1,8 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url("root.css");
+@import url("animations.css");
 
-
-:root {
-    --color-primary: #A681FA;
-    --color-second: #9400FF;
-    --black-transparent: rgba(0, 0, 0, 0.4);
-    --transition-3: .3s;
-
-    /*        Tema escuro             */
-    --bg-theme-black: rgb(24, 21, 21);
-    --text-theme-black: rgb(255, 255, 255);
-
-
-    /*        Tema claro               */
-    --bg-theme-white: rgba(255, 255, 255, 0.986);
-    --text-theme-white: rgb(24, 21, 21);
-
-    --border-radius-4: 4px;
-    --circle: 50px;
-}
-
-@font-face {
-    font-family: ArialBlack;
-    src: url("../fonts/arial-black.ttf");
-}
-
-
+@import url("fonts.css");
 
 * {
     margin: 0;
@@ -126,29 +103,60 @@ span.line-light {
 span#primeiro {
     top: 0;
     left: 0;
-}
-
-span#segundo {
-    top: 50px;
-    left: 40px;
+    opacity: 0;
+    animation-name: opacityEffect;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.3s;
     
 }
 
 
 
+span#terceiro {
+    animation-name: opacityEffect;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.3s;
+}
+
+span#segundo {
+    top: 50px;
+    left: 40px;
+    opacity: 0;   
+    animation-name: opacityEffect;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 0.6s;
+}
 
 span#terceiro {
     right: 0;
     bottom: 0;
+    opacity: 0;
+    animation-name: opacityEffect;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 1.1s;
 }
 
 span#quarto {
-    transform: translateY(5.4px) translateX(95px);
-    animation-name: animacao1;
+    transform: translateX(96px) translateY(5.4px);
+    opacity: 0;
+    animation-name: positionEffect;
+    animation-duration: 0.8s;
     animation-fill-mode: forwards;
-    animation-duration: 1.3s;
-    animation-timing-function: ease;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    
 }
+
 
 div.toggle-container {
     display: flex;
@@ -164,7 +172,19 @@ div.toggle-container {
     transition: var(--transition-3) transform;
     align-items: center;
     justify-content: center;
+    
+    
 }
+
+
+div.toggle-container.enabled-animation {
+    animation-name: rotateCircleEffect;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
 
  
 i#toggle-icon {
@@ -178,6 +198,7 @@ nav {
     height: 0;
     width: 100%;
     position: absolute;
+    z-index: 2;
 }
 
 nav.is-visible {
@@ -207,6 +228,7 @@ nav.is-visible {
     background-color: var(--color-second);
     justify-content: center;
     overflow: hidden;
+   
     
 }
 
@@ -215,6 +237,15 @@ nav.is-visible {
     height: 100%;
     font-size: 20px;
     padding: 13px;
+    
+}
+
+.menu li a {
+    animation-name: zoomEffect;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
 
 .submenu {
@@ -245,6 +276,7 @@ nav.is-visible {
 .menu li a:hover {
     background-color: black;
     color: white;
+    
 }
 
 .submenu li a:hover {
@@ -258,7 +290,8 @@ nav.is-visible {
     width: 100%;
     display: flex;
     height: 200px;
-    margin-top: 200px;
+    margin-top: 50px;
+    justify-content: center;
 }
 
 
@@ -273,14 +306,37 @@ footer {
     width: 100%;
     height: 100px;
     background-color: var(--color-second);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produto-image {
+    opacity: 1;
+    width: 140px;
+    animation-name: zoomEffect;
+    animation-timing-function: linear;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+.section-produtos {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
 
-/*  ====== Animações ======  */
-@keyframes animacao1 {
-    to {
-        transform: translateY(60px) translateX(66px);
-        color: var(--color-second);
-    }
+.produtos {
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
 }
+
+
+
